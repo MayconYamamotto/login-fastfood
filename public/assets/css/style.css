@@ -1,0 +1,144 @@
+/* resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+:root {
+  --text-primary: #43525f;
+  --text-secondary: #b0b7c0;
+  --text-title: #31314f;
+  --grey-light: #ecf2f7;
+  font-size: 62.5%;
+}
+
+html {
+  font: normal normal 400 normal 1rem "Inter", sans-serif;
+}
+
+/* grid */
+main {
+  display: grid;
+  grid-template: 1fr / 2fr 1.25fr;
+  grid-template-areas: "figure aside";
+}
+
+.figure {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  grid-area: figure;
+  background: #ffede1;
+}
+
+.aside {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  grid-area: aside;
+  background: #f6f8fc;
+}
+
+/* aside */
+aside .container {
+  margin: 0 auto;
+}
+
+/* aside title */
+aside .container h1 {
+  color: var(--text-title);
+  font-size: 3.6rem;
+  text-align: center;
+}
+
+/* aside icons */
+aside .container form .icons {
+  text-align: center;
+}
+
+aside .container form .icons img {
+  padding: 1rem;
+  margin: 2.5rem 0.5rem;
+  border-radius: 0.8rem;
+  background: var(--grey-light);
+}
+
+/* aside separator */
+aside .container form .separator {
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid var(--grey-light);
+  line-height: 0;
+  margin: 1rem 0;
+}
+aside .container form .separator span {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  padding: 0 1rem;
+  background: #f6f8fc;
+}
+
+/* aside form */
+aside .container form .form-group {
+}
+
+aside .container form .form-group .input-group {
+  display: flex;
+  margin-top: 2rem;
+  flex-direction: column;
+}
+
+aside .container form .form-group .input-group label {
+  font: normal normal 500 normal 1.4rem "Inter", sans-serif;
+  color: var(--text-primary);
+}
+
+aside .container form .form-group .input-group .form-control {
+  margin-top: 0.8rem;
+  border-radius: 0.6rem;
+  background: var(--grey-light);
+  border: 1px solid var(--grey-light);
+  padding: 1.25rem;
+  color: var(--text-primary);
+}
+
+aside .container form .form-group .input-group .form-control::placeholder {
+  color: #b8bfc8;
+}
+
+aside .container form .form-group .input-group span {
+  color: #818b96;
+  font: normal normal 500 normal 1.2rem "Inter", sans-serif;
+}
+
+aside .container form .form-group button {
+  margin-top: 2.5rem;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.6rem;
+  border: none;
+  color: #fff;
+  background: #ffc65b;
+  font: normal normal 600 normal 1.4rem "Inter", sans-serif;
+}
+aside .container form .form-group p {
+  text-align: center;
+  margin-top: 3rem;
+  color: #fff;
+  font: normal normal 400 normal 1.2rem "Inter", sans-serif;
+  color: #818b96;
+}
+
+@media only screen and (max-width: 1024px) {
+  /* grid */
+  .figure {
+      display: none;
+  }
+  main {
+    display: grid;
+    grid-template: 1fr / 1fr;
+    grid-template-areas: "aside";
+  }
+}
